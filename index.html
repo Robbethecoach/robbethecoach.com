@@ -28,9 +28,9 @@
   .zweet { background: #183d25; color: #f3f5ea; }
   /* 2 — LURE */
   .lure { background: #e7e6e4; color: #0d0d0d; }
-  .lure .photos { display: flex; gap: 10px; flex-shrink: 0; }
-  .lure .photos img { width: clamp(88px, 11vw, 150px); aspect-ratio: 4 / 5; object-fit: cover; border-radius: 2px; filter: grayscale(1); }
-  .lure .right { display: flex; align-items: center; gap: 40px; }
+  .right { display: flex; align-items: center; gap: 40px; }
+  .right .cta { width: 210px; justify-content: flex-end; }
+  .photo { width: clamp(220px, 28vw, 420px); aspect-ratio: 16 / 9; object-fit: cover; border-radius: 2px; flex-shrink: 0; display: block; }
   /* 3 — The minimum viable workout */
   .mvw { background: #0a1432; color: #e7e6e4; }
   .mvw .text { max-width: 900px; }
@@ -46,7 +46,9 @@
 
   @media (max-width: 760px) {
     .band { flex-direction: column; align-items: flex-start; justify-content: center; }
-    .lure .right { flex-direction: column-reverse; align-items: flex-start; gap: 20px; }
+    .right { flex-direction: column-reverse; align-items: flex-start; gap: 20px; }
+    .photo { width: 100%; }
+    .right .cta { width: auto; }
     .pillars { gap: 18px; }
   }
   @media (prefers-reduced-motion: reduce) { .dot { animation: none; opacity: 1; } .cta .arrow { transition: none; } }
@@ -60,7 +62,10 @@
       <h2>Zweet Club</h2>
       <p>A boutique fitness studio on the Veldstraat in Ghent. Strength and conditioning, hot and cold, body and mind — a health(y) hub.</p>
     </div>
-    <span class="cta">zweet.club <span class="arrow">→</span></span>
+    <div class="right">
+      <img class="photo" src="zweet-club.jpg" alt="Inside Zweet Club, Veldstraat 88, Ghent">
+      <span class="cta">zweet.club <span class="arrow">→</span></span>
+    </div>
   </a>
 
   <a class="band lure" href="https://lurementorship.com">
@@ -70,10 +75,7 @@
       <p>The online program for personal trainers and coaches: everything your certificate forgot to teach you.</p>
     </div>
     <div class="right">
-      <div class="photos">
-        <img src="https://lurementorship.com/loewi.jpg" alt="Loewi Monbaliu">
-        <img src="https://lurementorship.com/__l5e/assets-v1/d41bd439-8d36-47a6-ac69-c84765697b11/robbe.jpg" alt="Robbe Vandenhoucke">
-      </div>
+      <img class="photo" src="lure.jpg" alt="Robbe Vandenhoucke and Loewi Monbaliu">
       <span class="cta">lurementorship.com <span class="arrow">→</span></span>
     </div>
   </a>
