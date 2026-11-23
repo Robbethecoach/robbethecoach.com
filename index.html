@@ -3,43 +3,83 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>robbethecoach — A work in progress</title>
-<meta name="description" content="robbethecoach — a generalist approach to fitness. The app is a work in progress.">
+<title>robbethecoach — Zweet Club, LURE & The minimum viable workout</title>
+<meta name="description" content="Robbe Vandenhoucke — founder of Zweet Club in Ghent, co-founder of LURE Mentorship, and building The minimum viable workout.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root { --ink: #e7e6e4; --bg: #0a1432; --muted: rgba(231,230,228,.6); --line: rgba(231,230,228,.18); }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body { height: 100%; }
-  body {
-    background: var(--bg); color: var(--ink);
-    font-family: Inter, system-ui, -apple-system, sans-serif;
-    display: flex; flex-direction: column; min-height: 100vh;
-    padding: clamp(24px, 5vw, 56px);
-    -webkit-font-smoothing: antialiased;
+  body { font-family: Inter, system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; background: #0a1432; }
+  .band {
+    position: relative; display: flex; align-items: center; justify-content: space-between; gap: 32px;
+    min-height: 33.334vh; padding: 28px clamp(24px, 5vw, 64px);
+    text-decoration: none; overflow: hidden;
   }
-  header { font-size: 13px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
-  main { flex: 1; display: flex; flex-direction: column; justify-content: center; max-width: 760px; }
-  .tag { font-size: 13px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-bottom: 28px; display: flex; align-items: center; gap: 12px; }
-  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ink); animation: pulse 2.4s ease-in-out infinite; }
+  .band .text { max-width: 640px; }
+  .label { font-size: 12px; letter-spacing: .18em; text-transform: uppercase; opacity: .65; display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+  h2 { font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-weight: 400; font-size: clamp(36px, 5.2vw, 72px); line-height: 1; letter-spacing: -.01em; }
+  p { margin-top: 12px; font-size: clamp(15px, 1.4vw, 17px); line-height: 1.5; opacity: .75; max-width: 520px; }
+  .cta { flex-shrink: 0; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; display: flex; align-items: center; gap: 10px; white-space: nowrap; }
+  .cta .arrow { display: inline-block; transition: transform .25s ease; }
+  a.band:hover .arrow { transform: translateX(6px); }
+
+  /* 1 — Zweet Club */
+  .zweet { background: #183d25; color: #f3f5ea; }
+  /* 2 — LURE */
+  .lure { background: #e7e6e4; color: #0d0d0d; }
+  .lure .photos { display: flex; gap: 10px; flex-shrink: 0; }
+  .lure .photos img { width: clamp(88px, 11vw, 150px); aspect-ratio: 4 / 5; object-fit: cover; border-radius: 2px; filter: grayscale(1); }
+  .lure .right { display: flex; align-items: center; gap: 40px; }
+  /* 3 — The minimum viable workout */
+  .mvw { background: #0a1432; color: #e7e6e4; }
+  .mvw .text { max-width: 900px; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: currentColor; animation: pulse 2.4s ease-in-out infinite; }
   @keyframes pulse { 0%,100% { opacity: .25 } 50% { opacity: 1 } }
-  h1 { font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-weight: 400; font-size: clamp(56px, 11vw, 128px); line-height: .95; letter-spacing: -.01em; }
-  p.lead { margin-top: 32px; font-size: clamp(17px, 2vw, 20px); line-height: 1.55; color: var(--muted); max-width: 520px; }
-  .pillars { margin-top: 48px; display: flex; flex-wrap: wrap; gap: 0; border-top: 1px solid var(--line); max-width: 520px; }
-  .pillars span { flex: 1; padding-top: 14px; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; }
-  footer { font-size: 13px; color: var(--muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-  @media (prefers-reduced-motion: reduce) { .dot { animation: none; opacity: 1; } }
+  .pillars { display: flex; gap: 28px; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; opacity: .8; flex-shrink: 0; }
+
+  @media (max-width: 760px) {
+    .band { flex-direction: column; align-items: flex-start; justify-content: center; }
+    .lure .right { flex-direction: column-reverse; align-items: flex-start; gap: 20px; }
+    .pillars { gap: 18px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .dot { animation: none; opacity: 1; } .cta .arrow { transition: none; } }
 </style>
 </head>
 <body>
-  <header>robbethecoach</header>
-  <main>
-    <div class="tag"><span class="dot"></span>A work in progress</div>
-    <h1>The minimum<br>viable workout.</h1>
-    <p class="lead">A generalist approach to fitness. The app is being built — come back soon.</p>
+
+  <a class="band zweet" href="https://zweet.club">
+    <div class="text">
+      <div class="label">01 — Studio · Ghent</div>
+      <h2>Zweet Club</h2>
+      <p>A boutique fitness studio on the Veldstraat in Ghent. Strength and conditioning, hot and cold, body and mind — a health(y) hub.</p>
+    </div>
+    <span class="cta">zweet.club <span class="arrow">→</span></span>
+  </a>
+
+  <a class="band lure" href="https://lurementorship.com">
+    <div class="text">
+      <div class="label">02 — Mentorship · with Loewi Monbaliu</div>
+      <h2>LURE Mentorship</h2>
+      <p>The online program for personal trainers and coaches: everything your certificate forgot to teach you.</p>
+    </div>
+    <div class="right">
+      <div class="photos">
+        <img src="https://lurementorship.com/loewi.jpg" alt="Loewi Monbaliu">
+        <img src="https://lurementorship.com/__l5e/assets-v1/d41bd439-8d36-47a6-ac69-c84765697b11/robbe.jpg" alt="Robbe Vandenhoucke">
+      </div>
+      <span class="cta">lurementorship.com <span class="arrow">→</span></span>
+    </div>
+  </a>
+
+  <section class="band mvw">
+    <div class="text">
+      <div class="label"><span class="dot"></span>03 — A work in progress</div>
+      <h2>The minimum viable workout.</h2>
+      <p>A generalist approach to fitness. The app is being built — come back soon.</p>
+    </div>
     <div class="pillars"><span>Move</span><span>Fuel</span><span>Recover</span><span>Think</span></div>
-  </main>
-  <footer><span>© 2026 robbethecoach</span><span>Gent, Belgium</span></footer>
+  </section>
+
 </body>
 </html>
