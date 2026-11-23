@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>robbethecoach — A work in progress</title>
+<meta name="description" content="robbethecoach — a generalist approach to fitness. The app is a work in progress.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --ink: #e7e6e4; --bg: #0a1432; --muted: rgba(231,230,228,.6); --line: rgba(231,230,228,.18); }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    background: var(--bg); color: var(--ink);
+    font-family: Inter, system-ui, -apple-system, sans-serif;
+    display: flex; flex-direction: column; min-height: 100vh;
+    padding: clamp(24px, 5vw, 56px);
+    -webkit-font-smoothing: antialiased;
+  }
+  header { font-size: 13px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+  main { flex: 1; display: flex; flex-direction: column; justify-content: center; max-width: 760px; }
+  .tag { font-size: 13px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-bottom: 28px; display: flex; align-items: center; gap: 12px; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ink); animation: pulse 2.4s ease-in-out infinite; }
+  @keyframes pulse { 0%,100% { opacity: .25 } 50% { opacity: 1 } }
+  h1 { font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-weight: 400; font-size: clamp(56px, 11vw, 128px); line-height: .95; letter-spacing: -.01em; }
+  p.lead { margin-top: 32px; font-size: clamp(17px, 2vw, 20px); line-height: 1.55; color: var(--muted); max-width: 520px; }
+  .pillars { margin-top: 48px; display: flex; flex-wrap: wrap; gap: 0; border-top: 1px solid var(--line); max-width: 520px; }
+  .pillars span { flex: 1; padding-top: 14px; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; }
+  footer { font-size: 13px; color: var(--muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  @media (prefers-reduced-motion: reduce) { .dot { animation: none; opacity: 1; } }
+</style>
+</head>
+<body>
+  <header>robbethecoach</header>
+  <main>
+    <div class="tag"><span class="dot"></span>A work in progress</div>
+    <h1>The minimum<br>viable workout.</h1>
+    <p class="lead">A generalist approach to fitness. The app is being built — come back soon.</p>
+    <div class="pillars"><span>Move</span><span>Fuel</span><span>Recover</span><span>Think</span></div>
+  </main>
+  <footer><span>© 2026 robbethecoach</span><span>Gent, Belgium</span></footer>
+</body>
+</html>
